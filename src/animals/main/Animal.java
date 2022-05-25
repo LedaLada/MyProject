@@ -17,15 +17,16 @@ public abstract class Animal {
     }
 
     public int eat(int eatenFood) {
-        this.energy += eatenFood;
-        System.out.println(this.getName() + " is eating. Energy balance " + this.energy);
+        int finalEat = this.getEnergy() + eatenFood;
+        this.setEnergy(finalEat);
+        System.out.println(this.getName() + " is eating. Energy balance " + this.getEnergy());
 
-        return this.energy;
+        return this.getEnergy();
     }
 
     public void move(int actionEnergy, String successMessage, String errorMessage) {
-        if (this.energy >= actionEnergy) {
-            int finalEnergy = this.energy - actionEnergy;
+        if (this.getEnergy() >= actionEnergy) {
+            int finalEnergy = this.getEnergy() - actionEnergy;
             this.setEnergy(finalEnergy);
             System.out.printf(successMessage, this.getName(), actionEnergy, this.getEnergy());
         } else {
