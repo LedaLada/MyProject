@@ -26,7 +26,7 @@ public abstract class Animal {
     public void move(int actionEnergy, String successMessage, String errorMessage) {
         if (this.energy >= actionEnergy) {
             int finalEnergy = this.energy - actionEnergy;
-            setEnergy(finalEnergy);
+            this.setEnergy(finalEnergy);
             System.out.printf(successMessage, this.getName(), actionEnergy, this.getEnergy());
         } else {
             System.out.printf(errorMessage, this.getName());
