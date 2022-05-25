@@ -14,10 +14,11 @@ public class Predator extends Ground implements IRunnable, IHunter {
 
     @Override
     public void eat(Animal animal) {
-        this.energy += animal.energy;
-        System.out.println(getName() + " ate another animal " + animal.getName() + " and took away the " + animal.energy
-                + " energy. Energy balance " + getEnergy());
+       int finalEnergy =  getEnergy() + animal.getEnergy();
+       setEnergy(finalEnergy);
+        System.out.println(getName() + " ate another animal " + animal.getName() + " and took away the " + animal.getEnergy()
+                + " energy. Energy balance " + this.getEnergy());
 
-        animal.energy = 0;
+        animal.setEnergy(0);
     }
 }

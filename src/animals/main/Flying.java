@@ -15,7 +15,8 @@ public class Flying extends Animal implements IRunnable, IPhotosynthesis {
 
     @Override
     public void photosynthesis() {
-        this.energy += PHOTO_ENERGY;
-        System.out.printf(PHOTO_MESSAGE,this.getName(),PHOTO_ENERGY,getEnergy());
+        int finalEnergy = this.getEnergy() + PHOTO_ENERGY;
+        setEnergy(finalEnergy);
+        System.out.printf(PHOTO_MESSAGE, this.getName(), PHOTO_ENERGY, this.getEnergy());
     }
 }

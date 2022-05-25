@@ -4,7 +4,6 @@ public class Herbivore extends Ground implements IRunnable, IPhotosynthesis {
     private final int PHOTO_ENERGY = 2;
     private final int RUN_ENERGY = 8;
 
-
     public Herbivore(int weight, String name, int energy) {
         super(weight, name, energy);
     }
@@ -16,7 +15,8 @@ public class Herbivore extends Ground implements IRunnable, IPhotosynthesis {
 
     @Override
     public void photosynthesis() {
-        this.energy += PHOTO_ENERGY;
-        System.out.printf(PHOTO_MESSAGE, this.getName(), PHOTO_ENERGY, getEnergy());
+        int finalEnergy = this.getEnergy() + PHOTO_ENERGY;
+        setEnergy(finalEnergy);
+        System.out.printf(PHOTO_MESSAGE, this.getName(), PHOTO_ENERGY, this.getEnergy());
     }
 }
