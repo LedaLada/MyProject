@@ -1,10 +1,10 @@
 package animals.main;
 
-public class Flying extends Animal implements IRunnable, IPhotosynthesis {
-    private final int RUN_ENERGY = 5;
-    private final int PHOTO_ENERGY = 1;
+public class Herbivore extends Ground implements IRunnable, IPhotosynthesis {
+    private final int PHOTO_ENERGY = 2;
+    private final int RUN_ENERGY = 8;
 
-    public Flying(int weight, String name, int energy) {
+    public Herbivore(int weight, String name, int energy) {
         super(weight, name, energy);
     }
 
